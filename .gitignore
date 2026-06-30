@@ -1,0 +1,9 @@
+# MkDocs 빌드 결과물
+site/
+
+# Python
+__pycache__/
+*.pyc
+.cache/
+.venv/
+venv/

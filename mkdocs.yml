@@ -1,0 +1,44 @@
+site_name: 모닥불 가이드
+site_url: https://the-campfire.github.io/
+site_description: 모닥불 서버 안내서
+docs_dir: docs
+
+theme:
+  name: material
+  language: ko
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로
+    - scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로
+  features:
+    - navigation.top
+    - navigation.sections
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+nav:
+  - 홈: index.md
+  - 시작하기: getting-started.md
+  - 서버 규칙: rules.md
+  - 자주 묻는 질문: faq.md
