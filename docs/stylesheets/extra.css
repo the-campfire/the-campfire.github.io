@@ -1,0 +1,17 @@
+/* ===========================================================
+   타닥불 위키 — 모닥불 밤(A안) 테마
+   - 한글 폰트: Pretendard
+   - 다크(slate) 배경을 따뜻한 톤으로
+   =========================================================== */
+
+/* 한글 웹폰트 Pretendard (Variable) */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css");
+
+:root {
+  --md-text-font: "Pretendard Variable";
+}
+
+/* 다크 모드(모닥불 밤): 회색을 청색빛 → 따뜻한 갈색빛으로 */
+[data-md-color-scheme="slate"] {
+  --md-hue: 28;
+}
