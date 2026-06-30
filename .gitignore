@@ -7,3 +7,6 @@ __pycache__/
 .cache/
 .venv/
 venv/
+
+# 인수인계 문서 (로컬 전용, 공개 저장소에 올리지 않음)
+HANDOVER.md
