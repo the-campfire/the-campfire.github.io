@@ -1,0 +1,20 @@
+/* 타닥불 위키 — 한글 가독성 개선 (Pretendard) */
+
+:root {
+  --md-text-font: "Pretendard Variable";
+  --md-text-font-family: "Pretendard Variable", Pretendard,
+    -apple-system, BlinkMacSystemFont, system-ui,
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+/* 본문·입력·문서 영역에 프리텐다드를 확실히 적용 */
+body,
+input,
+.md-typeset {
+  font-family: var(--md-text-font-family);
+}
+
+/* 라이트 모드 본문 대비를 살짝 강화해 또렷하게 */
+[data-md-color-scheme="default"] {
+  --md-typeset-color: hsla(0, 0%, 0%, 0.9);
+}
