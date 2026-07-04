@@ -14,7 +14,20 @@ input,
   font-family: var(--md-text-font-family);
 }
 
-/* 라이트 모드 본문 대비를 살짝 강화해 또렷하게 */
+/* 본문 가독성: 줄 간격·자간을 한글에 맞게 조정 */
+.md-typeset {
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+}
+
+/* 본문 글자를 살짝 키워 읽기 편하게 (기본 0.8rem → 0.85rem) */
+.md-typeset p,
+.md-typeset li,
+.md-typeset td {
+  font-size: 0.85rem;
+}
+
+/* 라이트 모드 본문 대비를 강화해 또렷하게 */
 [data-md-color-scheme="default"] {
-  --md-typeset-color: hsla(0, 0%, 0%, 0.9);
+  --md-typeset-color: hsla(0, 0%, 0%, 0.92);
 }
