@@ -38,8 +38,10 @@ input,
 }
 
 /* 사이드바 메뉴에 마우스를 올리면 배경이 은은하게 바뀌게 (hover 하이라이트) */
+/* 패딩으로 하이라이트 박스를 두툼하게 키움 */
 .md-nav__link {
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0.5rem;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 .md-nav__link:hover {
