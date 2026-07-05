@@ -36,3 +36,12 @@ input,
 .md-nav {
   font-size: 0.8rem;
 }
+
+/* 사이드바 메뉴에 마우스를 올리면 배경이 은은하게 바뀌게 (hover 하이라이트) */
+.md-nav__link {
+  border-radius: 0.2rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.md-nav__link:hover {
+  background-color: rgba(255, 87, 34, 0.1);
+}
