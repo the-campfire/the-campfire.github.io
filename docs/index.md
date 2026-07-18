@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 <div class="cf-hero">
   <span class="cf-badge">🔥 CAMPFIRE ONLINE</span>
   <h1 class="cf-h1">타닥불, <span class="cf-glow">오늘 밤도<br>켜져 있어요</span> 🔥</h1>

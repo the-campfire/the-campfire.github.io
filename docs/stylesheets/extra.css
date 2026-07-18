@@ -315,6 +315,19 @@ input,
   }
 }
 
+/* ═══════════ 홈 : 히어로 풀블리드 (데스크톱에서 프로토타입처럼 화면 꽉 참) ═══════════ */
+/* :has(.cf-hero) 로 홈에만, min-width 로 사이드바가 보이는 데스크톱에만 적용
+   → 모바일에선 위 둥근 카드 히어로가 유지되어 가로 스크롤이 생기지 않는다 */
+@media screen and (min-width: 76.25em) {
+  body:has(.cf-hero) .md-main__inner { margin-top: 0; }
+  body:has(.cf-hero) .md-content__inner { padding-top: 0; }
+  body:has(.cf-hero) .md-content__inner::before { display: none; }
+  .md-typeset .cf-hero {
+    margin: 0 -24px 34px;
+    border-radius: 0;
+  }
+}
+
 /* ═══════════ admonition(팁 박스) — 밤의 숲 톤 ═══════════ */
 .md-typeset .admonition.tip,
 .md-typeset details.tip {
