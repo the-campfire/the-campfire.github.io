@@ -4,6 +4,8 @@ hide:
 ---
 
 <div class="cf-hero">
+  <span class="cf-tape" aria-hidden="true"></span>
+  <span class="cf-stamp" aria-hidden="true">CAMPFIRE<br>GUIDE</span>
   <span class="cf-badge">🔥 CAMPFIRE ONLINE</span>
   <h1 class="cf-h1">타닥불, <span class="cf-glow">오늘 밤도<br>켜져 있어요</span> 🔥</h1>
   <p class="cf-sub">평일 저녁, 함께 게임하고 수다 떠는 성인(만 20세 이상) 종합 게임·수다 커뮤니티.<br>혼자 접속해도 어색하지 않게 — 필요한 건 전부 여기 정리해 뒀어요.</p>
