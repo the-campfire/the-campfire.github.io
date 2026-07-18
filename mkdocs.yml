@@ -8,18 +8,18 @@ theme:
   language: ko
   font: false
   palette:
-    - scheme: default
-      primary: deep orange
-      accent: orange
-      toggle:
-        icon: material/weather-night
-        name: 다크 모드로
     - scheme: slate
       primary: deep orange
       accent: orange
       toggle:
         icon: material/weather-sunny
         name: 라이트 모드로
+    - scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로
   features:
     - navigation.top
     - navigation.sections

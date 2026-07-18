@@ -1,51 +1,332 @@
-/* 타닥불 위키 — 한글 가독성 개선 (Pretendard) */
+/* 타닥불 위키 — "모닥불 밤 : 밤의 숲" 테마 (Pretendard) */
 
+/* ───────── 폰트 ───────── */
 :root {
   --md-text-font: "Pretendard Variable";
   --md-text-font-family: "Pretendard Variable", Pretendard,
     -apple-system, BlinkMacSystemFont, system-ui,
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
 }
-
-/* 본문·입력·문서 영역에 프리텐다드를 확실히 적용 */
 body,
 input,
 .md-typeset {
   font-family: var(--md-text-font-family);
 }
 
-/* 본문 가독성: 줄 간격·자간을 한글에 맞게 조정 */
+/* ───────── 본문 가독성 ───────── */
 .md-typeset {
   line-height: 1.75;
   letter-spacing: -0.01em;
 }
-
-/* 본문 글자를 키워 읽기 편하게 (기본 0.8rem → 0.9rem, 약 18px) */
 .md-typeset p,
 .md-typeset li,
 .md-typeset td {
   font-size: 0.9rem;
 }
 
-/* 라이트 모드 본문 대비를 강화해 또렷하게 */
+/* ═══════════ 색 팔레트 ═══════════ */
+/* 다크(기본) — 밤의 숲 */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:          #0f1513;
+  --md-default-fg-color:          #f0e9e2;
+  --md-default-fg-color--light:   #cdbfb3;
+  --md-default-fg-color--lighter: #8f8578;
+  --md-default-fg-color--lightest:#2a332d;
+  --md-primary-fg-color:          #111815;
+  --md-primary-fg-color--light:   #1a231e;
+  --md-primary-fg-color--dark:    #0c1210;
+  --md-primary-bg-color:          #f0e9e2;
+  --md-primary-bg-color--light:   #cdbfb3;
+  --md-accent-fg-color:           #ff8c5a;
+  --md-typeset-a-color:           #ff8c5a;
+  --md-code-bg-color:             #1a231e;
+  --md-code-fg-color:             #ffcf8a;
+  --md-footer-bg-color:           #0c1210;
+  --md-footer-bg-color--dark:     #0a0f0d;
+  --md-typeset-mark-color:        rgba(255, 183, 3, 0.28);
+
+  /* 커스텀(히어로·카드)용 토큰 */
+  --cf-card:        #18211d;
+  --cf-card-border: #26332c;
+  --cf-text:        #f0e9e2;
+  --cf-muted:       #b3a599;
+  --cf-flame:       #ff6b35;
+  --cf-flame-soft:  #ff8c5a;
+  --cf-amber:       #ffb703;
+  --cf-coral:       #ff5b7f;
+  --cf-sub:         #d8ccc0;
+  --cf-hero-border: #24332b;
+  --cf-hero-bg:
+    radial-gradient(120% 140% at 50% 130%, rgba(255,107,53,.28) 0%, rgba(255,183,3,.10) 28%, transparent 60%),
+    linear-gradient(160deg, #16241d 0%, #111b16 55%, #0f1513 100%);
+}
+/* 라이트 — 밤의 숲의 낮 */
 [data-md-color-scheme="default"] {
-  --md-typeset-color: hsla(0, 0%, 0%, 0.92);
+  --md-default-bg-color:          #eef1ea;
+  --md-default-fg-color:          #28322b;
+  --md-default-fg-color--light:   #4c584f;
+  --md-default-fg-color--lighter: #7a857c;
+  --md-default-fg-color--lightest:#dde2d5;
+  --md-primary-fg-color:          #f5f7f1;
+  --md-primary-fg-color--light:   #ffffff;
+  --md-primary-fg-color--dark:    #e4ebdf;
+  --md-primary-bg-color:          #28322b;
+  --md-primary-bg-color--light:   #4c584f;
+  --md-accent-fg-color:           #e0531c;
+  --md-typeset-a-color:           #c8491a;
+  --md-code-bg-color:             #f2ecdf;
+  --md-code-fg-color:             #a86a10;
+  --md-footer-bg-color:           #e4ebdf;
+  --md-footer-fg-color:           #28322b;
+  --md-typeset-mark-color:        rgba(224, 83, 28, 0.20);
+
+  --cf-card:        #ffffff;
+  --cf-card-border: #dde2d5;
+  --cf-text:        #28322b;
+  --cf-muted:       #5d6a5f;
+  --cf-flame:       #e0531c;
+  --cf-flame-soft:  #c8491a;
+  --cf-amber:       #bd7f14;
+  --cf-coral:       #e64b6a;
+  --cf-sub:         #4c584f;
+  --cf-hero-border: #dde2d5;
+  --cf-hero-bg:
+    radial-gradient(120% 140% at 50% 130%, rgba(224,83,28,.16) 0%, rgba(194,133,26,.08) 28%, transparent 60%),
+    linear-gradient(160deg, #e4ebdf 0%, #eef1ea 55%, #eef1ea 100%);
 }
 
-/* 왼쪽 사이드바 메뉴 · 오른쪽 목차(TOC) 글자 키우기 (기본 0.7rem → 0.8rem) */
+/* ───────── 배경 글로우 (모닥불 불빛) ───────── */
+[data-md-color-scheme="slate"] body {
+  background:
+    radial-gradient(900px 620px at 86% 3%, rgba(255,145,55,.13), transparent 56%),
+    radial-gradient(760px 620px at -2% 72%, rgba(255,100,40,.07), transparent 55%),
+    var(--md-default-bg-color);
+  background-attachment: fixed;
+}
+[data-md-color-scheme="default"] body {
+  background:
+    radial-gradient(900px 620px at 86% 3%, rgba(232,120,40,.10), transparent 56%),
+    radial-gradient(760px 620px at -2% 72%, rgba(120,150,110,.10), transparent 55%),
+    var(--md-default-bg-color);
+  background-attachment: fixed;
+}
+
+/* ───────── 헤더 ───────── */
+.md-header {
+  border-bottom: 1px solid var(--cf-hero-border);
+}
+
+/* ───────── 사이드바 내비 ───────── */
 .md-nav {
   font-size: 0.8rem;
 }
-
-/* 사이드바 메뉴에 마우스를 올리면 배경이 은은하게 바뀌게 (hover 하이라이트) */
-/* 패딩으로 하이라이트 박스를 두툼하게 키움 */
 .md-nav__link {
   border-radius: 0.3rem;
   padding: 0.4rem 0.5rem;
-  /* 박스를 키우며 벌어진 항목 간격을 다시 좁힘 (기본 10px → 0) */
   margin-top: 0;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 .md-nav__link:hover {
-  background-color: rgba(255, 87, 34, 0.1);
+  background-color: rgba(255, 107, 53, 0.1);
+}
+.md-nav__link--active,
+.md-nav__link--active:focus {
+  color: var(--cf-flame-soft) !important;
+  font-weight: 700;
+}
+
+/* ───────── 섹션 제목 h2 (왼쪽 불꽃 바) ───────── */
+.md-typeset h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.md-typeset h2::before {
+  content: "";
+  flex: none;
+  width: 5px;
+  height: 1.05em;
+  border-radius: 3px;
+  background: linear-gradient(var(--cf-flame), var(--cf-amber));
+}
+
+/* ═══════════ 홈 : 히어로 배너 ═══════════ */
+.md-typeset .cf-hero {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 34px;
+  padding: 52px 32px;
+  border-radius: 18px;
+  text-align: center;
+  background: var(--cf-hero-bg);
+  border: 1px solid var(--cf-hero-border);
+}
+.md-typeset .cf-hero::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff1f1f, #ff5121, #ff6b35);
+  box-shadow: 0 0 16px rgba(255, 45, 30, 0.55);
+}
+.md-typeset .cf-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cf-amber);
+  border: 1px solid color-mix(in srgb, var(--cf-amber) 45%, transparent);
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--cf-amber) 18%, transparent);
+}
+.md-typeset h1.cf-h1 {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  color: var(--cf-text);
+}
+.md-typeset .cf-h1 .cf-glow {
+  color: var(--cf-flame);
+  text-shadow: 0 0 24px color-mix(in srgb, var(--cf-flame) 50%, transparent);
+}
+.md-typeset .cf-sub {
+  font-size: 17px;
+  color: var(--cf-sub);
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+.md-typeset .cf-cta {
+  display: inline-flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.md-typeset .cf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 22px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
+}
+.md-typeset .cf-btn-primary {
+  background: linear-gradient(135deg, var(--cf-flame), var(--cf-amber));
+  color: #1a1614 !important;
+  box-shadow: 0 6px 22px color-mix(in srgb, var(--cf-flame) 35%, transparent);
+}
+.md-typeset .cf-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--cf-flame) 50%, transparent);
+}
+.md-typeset .cf-btn-ghost {
+  background: transparent;
+  color: var(--cf-text) !important;
+  border: 1px solid var(--cf-card-border);
+}
+.md-typeset .cf-btn-ghost:hover {
+  border-color: var(--cf-flame);
+  color: var(--cf-flame-soft) !important;
+}
+
+/* ═══════════ 홈 : 카드 그리드 ═══════════ */
+.md-typeset .cf-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 18px 0 40px;
+}
+.md-typeset .cf-card {
+  position: relative;
+  display: block;
+  background: var(--cf-card);
+  border: 1px solid var(--cf-card-border);
+  border-radius: 14px;
+  padding: 20px;
+  color: var(--cf-text) !important;
+  text-decoration: none;
+  transition: transform 0.14s ease, box-shadow 0.25s ease;
+}
+.md-typeset .cf-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--cf-flame), var(--cf-amber), var(--cf-coral));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.md-typeset .cf-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--cf-flame) 24%, transparent);
+}
+.md-typeset .cf-card:hover::before {
+  opacity: 1;
+}
+.md-typeset .cf-ico {
+  display: block;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.md-typeset .cf-t {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--cf-text);
+}
+.md-typeset .cf-d {
+  display: block;
+  font-size: 14px;
+  color: var(--cf-muted);
+  line-height: 1.6;
+}
+.md-typeset .cf-go {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--cf-flame-soft);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+  .md-typeset .cf-cards {
+    grid-template-columns: 1fr;
+  }
+  .md-typeset h1.cf-h1 {
+    font-size: 30px;
+  }
+  .md-typeset .cf-hero {
+    padding: 40px 20px;
+  }
+}
+
+/* ═══════════ admonition(팁 박스) — 밤의 숲 톤 ═══════════ */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-left-color: var(--cf-amber);
+  border-radius: 12px;
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--cf-amber) 8%, transparent),
+    color-mix(in srgb, var(--cf-flame) 4%, transparent));
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background: color-mix(in srgb, var(--cf-amber) 12%, transparent);
+  color: var(--cf-amber);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: var(--cf-amber);
 }
