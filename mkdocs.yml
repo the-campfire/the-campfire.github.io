@@ -12,6 +12,12 @@ theme:
       primary: deep orange
       accent: orange
       toggle:
+        icon: material/moon-waning-crescent
+        name: 딥다크 모드로
+    - scheme: deepdark
+      primary: deep orange
+      accent: orange
+      toggle:
         icon: material/weather-sunny
         name: 라이트 모드로
     - scheme: default
